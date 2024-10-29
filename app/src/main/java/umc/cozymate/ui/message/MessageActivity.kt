@@ -17,17 +17,17 @@ class MessageActivity : AppCompatActivity() {
         binding = ActivityMessageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 1. MessageItem 더미 데이터 생성
-        val dummyMessages = listOf(
-            MessageItem(nickname = "제이", content = "그럼 저희 같이 하는 건가용?"),
-            MessageItem(nickname = "더기", content = "혹시 소등시간 오전 4시 괜찮으실까요..?"),
-            MessageItem(nickname = "name1", content = "test"),
-            MessageItem(nickname = "name2", content = "test"),
-
-        )
-
-        // 2. MessageAdapter 인스턴스 생성 및 데이터 설정
-        messageAdapter = MessageAdapter(dummyMessages)
+//        // 1. MessageItem 더미 데이터 생성
+//        val dummyMessages = listOf(
+//            MessageItem(nickname = "제이", content = "그럼 저희 같이 하는 건가용?"),
+//            MessageItem(nickname = "더기", content = "혹시 소등시간 오전 4시 괜찮으실까요..?"),
+//            MessageItem(nickname = "name1", content = "test"),
+//            MessageItem(nickname = "name2", content = "test"),
+//
+//        )
+//
+//        // 2. MessageAdapter 인스턴스 생성 및 데이터 설정
+//        messageAdapter = MessageAdapter(dummyMessages)
 
         // 3. RecyclerView에 어댑터 설정
         binding.rvMessage.apply {
