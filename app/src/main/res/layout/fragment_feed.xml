@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#F7F8FA"
+    android:paddingTop="47dp">
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -21,17 +23,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:src="@drawable/ic_lamp"
+                android:src="@drawable/ic_feed_light"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/basic_font" />
 
             <TextView
                 android:id="@+id/tv_feed_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="32dp"
                 android:text="피그말리온"
                 android:textAppearance="@style/TextAppearance.App.18sp.SemiBold"
                 android:textColor="@color/basic_font"
+                android:gravity="center_vertical"
+                android:layout_marginTop="6dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_lamp" />
 
@@ -41,12 +46,12 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_pencil"
                 app:layout_constraintStart_toEndOf="@id/tv_feed_name"
-                app:layout_constraintTop_toBottomOf="@id/iv_lamp" />
+                app:layout_constraintTop_toTopOf="@id/tv_feed_name" />
 
             <TextView
                 android:id="@+id/tv_feed_info"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="17dp"
                 android:text="피드 설명을 입력해주세요"
                 android:textAppearance="@style/TextAppearance.App.12sp.Medium"
                 android:textColor="@color/unuse_font"
@@ -66,6 +71,17 @@
     </androidx.core.widget.NestedScrollView>
 
 
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_pencil_color"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="38dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cl_bottom"/>
+
+
+    
     <TextView
         android:id="@+id/tv_Empty"
         android:layout_width="match_parent"
@@ -77,6 +93,7 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    
     <!-- 바텀뷰만큼 띄우기위한 코드입니다^^ -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_bottom"

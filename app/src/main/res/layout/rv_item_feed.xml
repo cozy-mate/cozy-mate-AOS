@@ -3,48 +3,88 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/custom_rectangle_12"
+    android:background="@drawable/background_checklist"
     android:padding="16dp"
     android:layout_marginVertical="8dp">
-    <ImageView
-        android:id="@+id/iv_feed_peresona"
-        android:layout_width="26dp"
+    <LinearLayout
+        android:id="@+id/layout_feed_info"
+        android:layout_width="match_parent"
         android:layout_height="26dp"
-        android:src="@drawable/character_1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/tv_feed_nickname"
-        android:layout_width="wrap_content"
-        android:layout_height="26dp"
-        android:text="델로"
-        android:textAppearance="@style/TextAppearance.App.14sp.SemiBold"
-        android:textColor="@color/highlight_font"
-        android:gravity="center"
-        android:layout_marginStart="6dp"
-        app:layout_constraintStart_toEndOf="@id/iv_feed_peresona"
-        app:layout_constraintTop_toTopOf="parent"/>
-    <TextView
-        android:id="@+id/tv_feed_text"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:id="@+id/iv_feed_peresona"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/character_1" />
+        <TextView
+            android:id="@+id/tv_feed_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:text="델로"
+            android:textAppearance="@style/TextAppearance.App.14sp.SemiBold"
+            android:textColor="@color/highlight_font"
+            android:gravity="center"
+            android:layout_marginStart="6dp"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/tv_feed_time"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:text="3분전"
+            android:textAppearance="@style/TextAppearance.App.12sp.Regular"
+            android:textColor="@color/unuse_font"
+            android:gravity="center"
+            android:layout_marginStart="6dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_feed_contents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="test\ntest\ntest"
-        android:textAppearance="@style/TextAppearance.App.14sp.Medium"
-        android:textColor="@color/color_font"
         android:paddingHorizontal="4dp"
         android:layout_marginTop="6dp"
-        app:layout_constraintTop_toBottomOf="@id/iv_feed_peresona"
-        app:layout_constraintStart_toStartOf="parent"/>
-    
-    <TextView
+        app:layout_constraintTop_toBottomOf="@id/layout_feed_info"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_feed_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="test\ntest\ntest"
+            android:textAppearance="@style/TextAppearance.App.14sp.Medium"
+            android:textColor="@color/color_font"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/layout_feed_comment"
         android:layout_width="wrap_content"
-        android:layout_height="14dp"
-        android:text="5"
-        android:textAppearance="@style/TextAppearance.App.12sp.Regular"
-        android:textColor="@color/unuse_font"
+        android:layout_height="17dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_feed_text"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/layout_feed_contents"
+        app:layout_constraintStart_toStartOf="parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_feed_comment"
+            android:layout_marginEnd="4dp"/>
+        <TextView
+            android:id="@+id/tv_feed_comment_count"
+            android:layout_width="wrap_content"
+            android:layout_height="14dp"
+            android:text="5"
+            android:textAppearance="@style/TextAppearance.App.12sp.Regular"
+            android:textColor="@color/unuse_font"/>
+    </LinearLayout>
+
+
 
     
 
