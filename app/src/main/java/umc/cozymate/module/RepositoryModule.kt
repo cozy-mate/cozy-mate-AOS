@@ -6,6 +6,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.android.scopes.ViewModelScoped
 import umc.cozymate.data.api.ChatService
+import umc.cozymate.data.api.FeedService
 import umc.cozymate.data.api.MemberService
 import umc.cozymate.data.api.RoleService
 import umc.cozymate.data.api.RoomLogService
@@ -13,6 +14,7 @@ import umc.cozymate.data.api.RoomService
 import umc.cozymate.data.api.RuleService
 import umc.cozymate.data.api.TodoService
 import umc.cozymate.data.repository.repository.ChatRepository
+import umc.cozymate.data.repository.repository.FeedRepository
 import umc.cozymate.data.repository.repository.MemberRepository
 import umc.cozymate.data.repository.repository.RoleRepository
 import umc.cozymate.data.repository.repository.RoomLogRepository
@@ -20,6 +22,7 @@ import umc.cozymate.data.repository.repository.RoomRepository
 import umc.cozymate.data.repository.repository.RuleRepository
 import umc.cozymate.data.repository.repository.TodoRepository
 import umc.cozymate.data.repository.repositoryImpl.ChatRepositoryImpl
+import umc.cozymate.data.repository.repositoryImpl.FeedRepositoryImpl
 import umc.cozymate.data.repository.repositoryImpl.MemberRepositoryImpl
 import umc.cozymate.data.repository.repositoryImpl.RoleRepositoryImpl
 import umc.cozymate.data.repository.repositoryImpl.RoomLogRepositoryImpl
@@ -72,5 +75,11 @@ object RepositoryModule {
     fun providesTodoRepository(
         todoService: TodoService
     ): TodoRepository = TodoRepositoryImpl(todoService)
+
+    @ViewModelScoped
+    @Provides
+    fun providesFeedRepository(
+        feedService: FeedService
+    ): FeedRepository = FeedRepositoryImpl(feedService)
 
 }
