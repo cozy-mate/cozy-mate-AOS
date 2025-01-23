@@ -43,7 +43,6 @@ class UpdateRoomInfoActivity : AppCompatActivity() {
         val fragment = UpdatePublicRoomFragment()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_update_room_info, fragment)
-            .addToBackStack(null)
             .commit()
     }
     // [비공개방 수정 페이지] 로드
@@ -51,7 +50,6 @@ class UpdateRoomInfoActivity : AppCompatActivity() {
         val fragment = UpdatePrivateRoomFragment()
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_update_room_info, fragment)
-            .addToBackStack(null)
             .commit()
     }
 }
